@@ -8,9 +8,9 @@ provides-member:
 provides-dynamic-lookup:
 - "viewDidLoad"
 depends-top-level:
-- !private "SampleViewModel"
-- "UIViewController"
 - "ViewController"
+- "UIViewController"
+- !private "SampleViewModel"
 depends-member:
 - !private ["Ps9AnyObject", "SampleViewModel"]
 - !private ["Ps9AnyObject", "init"]

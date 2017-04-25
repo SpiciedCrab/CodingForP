@@ -140,6 +140,7 @@ SWIFT_CLASS("_TtC17CodingForP_Sample11AppDelegate")
 SWIFT_CLASS("_TtC17CodingForP_Sample15SampleViewModel")
 @interface SampleViewModel : NSObject
 - (void)samplePlist;
+- (NSDictionary<NSString *, id> * _Nonnull)setupData;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
