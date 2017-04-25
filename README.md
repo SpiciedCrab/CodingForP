@@ -12,24 +12,24 @@ Normally, we need to create a model to fit the apiData and also our View like:
 
 <pre><code>struct Person
 {
-var id : String!
-var name : String!
-var salary : Double = 0
-var summary : String!
-var description : String!
-
-var displayedDiscription : String  {
-return "PersonId : \(id) \n Description : \(description)"
-}
-
-var displayedSalary : String  {
-return currencyGenerator(currencyDoubleValue: salary)
-}
-
-func currencyGenerator(currencyDoubleValue : Double) -> String
-{
-return ""
-}
+    var id : String!
+    var name : String!
+    var salary : Double = 0
+    var summary : String!
+    var description : String!
+    
+    var displayedDiscription : String  {
+        return "PersonId : \(id) \n Description : \(description)"
+    }
+    
+    var displayedSalary : String  {
+        return currencyGenerator(currencyDoubleValue: salary)
+    }
+    
+    func currencyGenerator(currencyDoubleValue : Double) -> String
+    {
+        return ""
+    }
 }
 </code></pre>
 
@@ -37,12 +37,12 @@ Then create a tableView (static or not) and to convert the Person to the dataSou
 
 <pre><code>func setupData() -> [String : Any]
 {
-let sampleSource = ["id" : "10000", "name" : "Fish", "salary" : 5000 , "summary" : "fff", "description" : "sss"] as [String : Any]
-let person = Person(json : sampleSource)
-return ["Name" : person.name,
-"Salary" : person.displayedSalary ,
-"Summary" : person.summary ,
-"Desciprtion" :person.displayedDiscription]    
+    let sampleSource = ["id" : "10000", "name" : "Fish", "salary" : 5000 , "summary" : "fff", "description" : "sss"] as [String : Any]
+    let person = Person(json : sampleSource)
+    return ["Name" : person.name,
+            "Salary" : person.displayedSalary ,
+            "Summary" : person.summary ,
+            "Desciprtion" :person.displayedDiscription]    
 }
 </code></pre>
 
@@ -67,13 +67,13 @@ We have the elements like : left title, right title, color, etc..:
 
 <pre><code>struct ConfigRow
 {
-// left title
-var key : String!
-
-// right title
-var value : String!
-var sortOrder : Int = 0
-var color : String = ""
+    // left title
+    var key : String!
+    
+    // right title
+    var value : String!
+    var sortOrder : Int = 0
+    var color : String = ""
 }
 </code></pre>
 
@@ -130,6 +130,6 @@ CodingForP is available through CocoaPods. To install it, simply add the followi
 
 Then you can directly call function:
 <pre>func smartTranslate(_ plistString : String ,
-fromLazyServerJson serverDic : [String : AnyObject])</pre>
+                    fromLazyServerJson serverDic : [String : AnyObject])</pre>
 
 Then `plistString` should be your expression in plist, the return value will be the expected result after generation.
