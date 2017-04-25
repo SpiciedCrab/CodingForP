@@ -31,6 +31,7 @@ class SampleViewModel: NSObject {
                 "Summary" : person.summary ,
                 "Desciprtion" : person.displayedDiscription]
         
+        
     }
 }
 

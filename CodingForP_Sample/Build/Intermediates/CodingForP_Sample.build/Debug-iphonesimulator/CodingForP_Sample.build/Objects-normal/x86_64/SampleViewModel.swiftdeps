@@ -15,23 +15,24 @@ provides-dynamic-lookup:
 - "samplePlist"
 - "setupData"
 depends-top-level:
-- "SampleViewModel"
-- !private "Dictionary"
-- !private "print"
-- !private "Bundle"
-- "CastingPrecedence"
-- "Person"
 - "Double"
-- !private "NSDictionary"
-- "ConfigRow"
-- "StringLiteralType"
-- "String"
-- "NSObject"
 - "Int"
+- "StringLiteralType"
+- "NSObject"
+- "ConfigRow"
+- !private "NSDictionary"
+- !private "Dictionary"
+- "Person"
+- !private "print"
+- "SampleViewModel"
+- !private "Bundle"
+- "String"
 - !private "smartTranslate"
 - !private "AnyObject"
+- "CastingPrecedence"
 depends-member:
 - !private ["Ps9AnyObject", "Bundle"]
+- !private ["Ps9AnyObject", "ConfigRow"]
 - !private ["Ps9AnyObject", "NSDictionary"]
 - !private ["Ps9AnyObject", "Person"]
 - ["Ps9AnyObject", "init"]
@@ -47,6 +48,7 @@ depends-member:
 - !private ["CSo6Bundle", "main"]
 - !private ["CSo6Bundle", "path"]
 - !private ["Ps7CVarArg", "Bundle"]
+- !private ["Ps7CVarArg", "ConfigRow"]
 - !private ["Ps7CVarArg", "Iterator"]
 - !private ["Ps7CVarArg", "Key"]
 - !private ["Ps7CVarArg", "NSDictionary"]
@@ -74,6 +76,7 @@ depends-member:
 - ["V17CodingForP_Sample9ConfigRow", "sortOrder"]
 - ["V17CodingForP_Sample9ConfigRow", "value"]
 - !private ["Ps28CustomDebugStringConvertible", "Bundle"]
+- !private ["Ps28CustomDebugStringConvertible", "ConfigRow"]
 - !private ["Ps28CustomDebugStringConvertible", "Iterator"]
 - !private ["Ps28CustomDebugStringConvertible", "Key"]
 - !private ["Ps28CustomDebugStringConvertible", "NSDictionary"]
@@ -94,6 +97,7 @@ depends-member:
 - !private ["Ps17CustomReflectable", "Value"]
 - ["Ps17CustomReflectable", "init"]
 - !private ["Ps23CustomStringConvertible", "Bundle"]
+- !private ["Ps23CustomStringConvertible", "ConfigRow"]
 - !private ["Ps23CustomStringConvertible", "Iterator"]
 - !private ["Ps23CustomStringConvertible", "Key"]
 - !private ["Ps23CustomStringConvertible", "NSDictionary"]
@@ -114,6 +118,7 @@ depends-member:
 - !private ["Vs18DictionaryIterator", "Element"]
 - ["Sd", "deinit"]
 - !private ["Ps9Equatable", "Bundle"]
+- !private ["Ps9Equatable", "ConfigRow"]
 - !private ["Ps9Equatable", "NSDictionary"]
 - !private ["Ps9Equatable", "Person"]
 - ["Ps9Equatable", "init"]
@@ -134,6 +139,7 @@ depends-member:
 - ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
 - !private ["Sf", "deinit"]
 - !private ["Ps8Hashable", "Bundle"]
+- !private ["Ps8Hashable", "ConfigRow"]
 - !private ["Ps8Hashable", "NSDictionary"]
 - !private ["Ps8Hashable", "Person"]
 - ["Ps8Hashable", "init"]
@@ -166,6 +172,7 @@ depends-member:
 - ["PSo16NSMutableCopying", "init"]
 - !private ["CSo8NSObject", "AnyObject"]
 - !private ["CSo8NSObject", "Bundle"]
+- !private ["CSo8NSObject", "ConfigRow"]
 - !private ["CSo8NSObject", "NSDictionary"]
 - !private ["CSo8NSObject", "Person"]
 - ["CSo8NSObject", "String"]
@@ -179,6 +186,7 @@ depends-member:
 - !private ["CSo8NSObject", "smartTranslate"]
 - ["CSo8NSObject", ""]
 - !private ["PSo16NSObjectProtocol", "Bundle"]
+- !private ["PSo16NSObjectProtocol", "ConfigRow"]
 - !private ["PSo16NSObjectProtocol", "NSDictionary"]
 - !private ["PSo16NSObjectProtocol", "Person"]
 - ["PSo16NSObjectProtocol", "init"]
@@ -206,6 +214,7 @@ depends-member:
 - ["V17CodingForP_Sample6Person", "summary"]
 - !private ["C17CodingForP_Sample15SampleViewModel", "AnyObject"]
 - !private ["C17CodingForP_Sample15SampleViewModel", "Bundle"]
+- !private ["C17CodingForP_Sample15SampleViewModel", "ConfigRow"]
 - !private ["C17CodingForP_Sample15SampleViewModel", "NSDictionary"]
 - !private ["C17CodingForP_Sample15SampleViewModel", "Person"]
 - ["C17CodingForP_Sample15SampleViewModel", "String"]
@@ -235,6 +244,7 @@ depends-member:
 - ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
 - ["Ps35_HasCustomAnyHashableRepresentation", "init"]
 - !private ["Ps9_Hashable", "Bundle"]
+- !private ["Ps9_Hashable", "ConfigRow"]
 - !private ["Ps9_Hashable", "NSDictionary"]
 - !private ["Ps9_Hashable", "Person"]
 - ["Ps9_Hashable", "init"]

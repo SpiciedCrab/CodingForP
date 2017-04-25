@@ -1,9 +1,9 @@
 version: "Apple Swift version 3.0.2 (swiftlang-800.0.63 clang-800.0.42.1)"
 options: "25b969b2194cb5bb33656d5235a4b019"
-build_time: [546420857, 211226000]
+build_time: [546425400, 595317000]
 inputs:
   "/Users/harly/Library/Developer/HarlyGitReferences/CodingForP/CodingForP/CodingForP_Sample/CodingForP_Sample/CodingForP/CodingForP_tools.swift": [546406836, 0]
   "/Users/harly/Library/Developer/HarlyGitReferences/CodingForP/CodingForP/CodingForP_Sample/CodingForP_Sample/CodingForP/CodingForP_extensions.swift": [546406836, 0]
   "/Users/harly/Library/Developer/HarlyGitReferences/CodingForP/CodingForP/CodingForP_Sample/CodingForP_Sample/ViewController.swift": [546406836, 0]
   "/Users/harly/Library/Developer/HarlyGitReferences/CodingForP/CodingForP/CodingForP_Sample/CodingForP_Sample/AppDelegate.swift": [546406836, 0]
-  "/Users/harly/Library/Developer/HarlyGitReferences/CodingForP/CodingForP/CodingForP_Sample/CodingForP_Sample/SampleViewModel.swift": [546420856, 0]
+  "/Users/harly/Library/Developer/HarlyGitReferences/CodingForP/CodingForP/CodingForP_Sample/CodingForP_Sample/SampleViewModel.swift": [546425400, 0]
