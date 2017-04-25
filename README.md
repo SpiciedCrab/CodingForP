@@ -87,3 +87,7 @@ Then you can directly call function:
                     fromLazyServerJson serverDic : [String : AnyObject])</pre>
 
 Then `plistString` should be your expression in plist, the return value will be the expected result after generation.
+
+## Requirements
+* Xcode 8.x
+* Swift 3.0
