@@ -6,15 +6,15 @@ provides-nominal:
 provides-member:
 provides-dynamic-lookup:
 depends-top-level:
-- !private "StringLiteralType"
-- "dateFormate"
-- "String"
-- !private "NSNumber"
 - "realString"
+- "CastingPrecedence"
 - "DateFormatter"
 - "AnyObject"
+- "String"
 - !private "Date"
-- "CastingPrecedence"
+- "dateFormate"
+- !private "StringLiteralType"
+- !private "NSNumber"
 depends-member:
 - ["Ps9AnyObject", "deinit"]
 - ["Ps9AnyObject", "init"]

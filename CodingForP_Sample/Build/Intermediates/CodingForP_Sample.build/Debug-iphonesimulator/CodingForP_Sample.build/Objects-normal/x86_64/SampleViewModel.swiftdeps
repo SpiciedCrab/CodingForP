@@ -8,17 +8,17 @@ provides-member:
 provides-dynamic-lookup:
 - "samplePlist"
 depends-top-level:
-- "NSObject"
-- "CastingPrecedence"
-- "SampleViewModel"
-- !private "AnyObject"
-- !private "print"
-- !private "Bundle"
-- !private "NSDictionary"
-- !private "smartTranslate"
 - !private "String"
-- !private "Dictionary"
+- !private "smartTranslate"
+- !private "print"
+- "SampleViewModel"
+- !private "Bundle"
 - !private "StringLiteralType"
+- !private "Dictionary"
+- "CastingPrecedence"
+- !private "AnyObject"
+- !private "NSDictionary"
+- "NSObject"
 depends-member:
 - !private ["Ps9AnyObject", "Bundle"]
 - !private ["Ps9AnyObject", "NSDictionary"]
