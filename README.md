@@ -3,7 +3,7 @@ Coding For Plist is a special way to config your view module with plist files, n
 
 ### Without plist
 First , look at the situation we meet everyday, we have some json data from our api server, then we need to convert it to our View mannually.
-
+<br/>
 ![codingForPCover] (https://raw.githubusercontent.com/SpiciedCrab/CodingForP/master/CodingForP_Sample/CodingForP_Sample/GitSource/cover.png)
 
 > The work flow above got me crazy everyday.. 
