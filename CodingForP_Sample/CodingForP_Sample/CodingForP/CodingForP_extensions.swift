@@ -14,7 +14,7 @@ let dateFormate = DateFormatter()
 ///
 /// - Parameter para: 转化前参数
 /// - Returns: 真的参数
-func realString(para : AnyObject?) -> String {
+func realString(para : Any?) -> String {
     guard let realPara = para else { return "" }
     if realPara is String
     {
@@ -22,11 +22,11 @@ func realString(para : AnyObject?) -> String {
     }
     else if realPara is NSNumber
     {
-        if let stringNum = realPara.stringValue
+        if let stringNum = (realPara as AnyObject).stringValue
         {
             return stringNum
         }
-        else if let intNum = realPara.int64Value
+        else if let intNum = (realPara as AnyObject).int64Value
         {
             return "\(intNum)"
         }

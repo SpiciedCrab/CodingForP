@@ -14,6 +14,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
+        let str = String(format: "%.2f", 1.1)
         //Sample 
         let sampleVm = SampleViewModel()
         sampleVm.samplePlist()

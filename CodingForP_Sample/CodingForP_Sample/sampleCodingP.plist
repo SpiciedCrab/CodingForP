@@ -2,6 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <array>
-	<string>-p *&amp;userId&amp;* *&amp;userName&amp;*  &lt;| price = *$price$*元 |&gt;</string>
+	<string>-p *&amp;userId&amp;* *&amp;userName&amp;*  &lt;| price = *#price#*元 |&gt;</string>
 </array>
 </plist>

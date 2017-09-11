@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name             = "CodingForP"  
-  s.version          = "1.0.0"  
+  s.version          = "1.0.1"  
   s.summary          = "Plist oriented programming"  
 
   s.homepage         = "https://github.com/SpiciedCrab/CodingForP"  

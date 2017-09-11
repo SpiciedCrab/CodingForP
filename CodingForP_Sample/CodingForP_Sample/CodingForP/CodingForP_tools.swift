@@ -19,6 +19,12 @@ let CodingForP_NullableSuffix = "|>"
 let CodingForP_CurrencyPrefix = "*$"
 let CodingForP_CurrencySuffix = "$*"
 
+let CodingForP_FormatSuffix = "#*"
+let CodingForP_FormatPrefix = "*#"
+
+let CodingForP_FormatedSplit = "^*^"
+
+
 let CodingForP_DefaultEqual = "*="
 
 /// translate JSON according to the formatString
@@ -32,7 +38,7 @@ let CodingForP_DefaultEqual = "*="
 ///   - serverDic: Your server JSON
 /// - Returns: ResultString formatted from [plistString]
 func smartTranslate(_ plistString : String ,
-                    fromLazyServerJson serverDic : [String : AnyObject])
+                    fromLazyServerJson serverDic : [String : Any])
     -> String
 {
     //Verify -p exsistance, if not, returns the normal key-value
@@ -43,7 +49,9 @@ func smartTranslate(_ plistString : String ,
 
     let currencyValue = smartCurrencyTranslate(plistString, fromLazyServerJson: serverDic)
     
-    let stringWithoutNullable = smartNullableTranslate(currencyValue, fromLazyServerJson: serverDic)
+    let decimalValue = smartFormatedTranslate(currencyValue, fromLazyServerJson: serverDic)
+    
+    let stringWithoutNullable = smartNullableTranslate(decimalValue, fromLazyServerJson: serverDic)
     
     return smartInternalTranslate(stringWithoutNullable, suffix: CodingForP_StringSuffix, prefix: CodingForP_StringPrefix, fromLazyServerJson: serverDic).0
     
@@ -51,7 +59,7 @@ func smartTranslate(_ plistString : String ,
 
 let currencyFormat = NumberFormatter()
 
-func stringFromCurrencyNumber(_ number : AnyObject , needZero : Bool) -> String
+func stringFromCurrencyNumber(_ number : Any , needZero : Bool) -> String
 {
     currencyFormat.numberStyle = .currency
     currencyFormat.currencySymbol = ""
@@ -71,7 +79,7 @@ func stringFromCurrencyNumber(_ number : AnyObject , needZero : Bool) -> String
     return needZero ? "0.00":""
 }
 
-func smartCurrencyTranslate(_ plistString : String, fromLazyServerJson serverDic : [String : AnyObject]) -> String
+func smartCurrencyTranslate(_ plistString : String, fromLazyServerJson serverDic : [String : Any]) -> String
 {
     let keyPairForCurrency = smartInternalTranslate(plistString, suffix: CodingForP_CurrencySuffix, prefix: CodingForP_CurrencyPrefix, fromLazyServerJson: serverDic).1
     
@@ -103,10 +111,52 @@ func smartCurrencyTranslate(_ plistString : String, fromLazyServerJson serverDic
     return resultCurrencyString
 }
 
+func smartFormatedTranslate(_ plistString : String, fromLazyServerJson serverDic : [String : Any]) -> String
+{
+    let keyPairForDecimal = smartInternalTranslate(plistString, suffix: CodingForP_FormatSuffix, prefix: CodingForP_FormatPrefix, fromLazyServerJson: serverDic).1
+    
+    var resultCurrencyString = plistString
+    
+    for (key,value) in keyPairForDecimal
+    {
+        var currency = (value as NSString).doubleValue
+        
+        let splited = key.components(separatedBy: CodingForP_FormatedSplit)
+        
+        var formate = ""
+        
+        var realKey = ""
+        
+        realKey = splited.count == 1 ? key : splited.first!
+        
+        if splited.count == 2
+        {
+            formate = splited.last!
+        }
+        
+        let currenctyReplacement = CodingForP_FormatPrefix + key + CodingForP_FormatSuffix
+        
+        let realReplacement = CodingForP_FormatPrefix + realKey + CodingForP_FormatSuffix
+        
+        if splited.count > 1
+        {
+            let realValues = smartInternalTranslate(realReplacement, suffix: CodingForP_FormatSuffix, prefix: CodingForP_FormatPrefix, fromLazyServerJson: serverDic).1
+            
+            currency = (realValues.values.first! as NSString).doubleValue
+        }
+        
+        let currencyNumber = formate.isEmpty ? "\(currency)" : String(format: formate, currency)
+        
+        resultCurrencyString = resultCurrencyString.replacingOccurrences(of: currenctyReplacement, with: currencyNumber)
+    }
+    
+    return resultCurrencyString
+}
+
 func smartInternalTranslate(_ plistString : String ,
                             suffix : String ,
                             prefix : String ,
-                    fromLazyServerJson serverDic : [String : AnyObject])
+                    fromLazyServerJson serverDic : [String : Any])
     -> (String , [String : String])
 {
     let strArrayWithoutPrefix = plistString.components(separatedBy: prefix)
@@ -157,7 +207,7 @@ func smartInternalTranslate(_ plistString : String ,
 }
 
 func smartNullableTranslate(_ plistString : String ,
-                    fromLazyServerJson serverDic : [String : AnyObject])
+                    fromLazyServerJson serverDic : [String : Any])
     -> String
 {
     //Verify -p exsistance, if not, returns the normal key-value
